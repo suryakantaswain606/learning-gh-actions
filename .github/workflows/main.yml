@@ -1,6 +1,6 @@
 name: My first workflow
 
-on: [push,workflow_dispatch]
+on: push
 
 jobs:
   my-first-job:
@@ -18,3 +18,16 @@ jobs:
 
       - name: Run Node.js File
         run: node app.js
+
+  my-second-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Print All System info
+        run: |
+          lsb_release -a
+          uname -r
+          lscpu
+          nproc
+          free -h
+          lsblk
